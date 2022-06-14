@@ -19,6 +19,11 @@ h3 {
 p {
   line-height: 1.5em;
   margin: 0;
+  font-size: 25px;
+}
+
+#host ul li {
+  font-size: 25px;
 }
 
 section {
@@ -31,7 +36,8 @@ section.alternate-background {
 }
 
 main img {
-  width: 100px;
+  width: 100%;
+  margin: 0 0 20px;
 }
 
 /* ---  Groups & Items --- */
@@ -39,6 +45,7 @@ main img {
 .group {
   display: flex;
   flex-direction: column;
+  margin: 10px;
 }
 
 .item {
@@ -53,6 +60,8 @@ main img {
 /* -------  Navigation ------- */
 
 header {
+  display: flex;
+  flex-direction: column;
   background-color: #ff385c;
   padding: 20px 20px 0 20px;
   text-align: center;
@@ -62,6 +71,16 @@ header {
   font-family: "Pangolin", cursive;
   font-size: 72px;
   color: #fff;
+}
+
+header nav {
+  display: flex;
+  justify-content: center;
+}
+
+header nav ul {
+  display: flex;
+  flex-direction: row;
 }
 
 header nav ul li {
@@ -81,8 +100,16 @@ header nav ul li a:hover {
 
 /* -------  Search Form ------- */
 form {
+  display: flex;
+  flex-direction: column;
   border: 2px solid #ff385c;
-  padding: 10px;
+  padding: 20px;
+}
+
+form div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 form label {
@@ -117,3 +144,47 @@ footer p {
 }
 
 /* -------  Media Query ------- */
+
+@media all and (min-width: 480px) {
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0 0 10px;
+  }
+
+  form {
+    flex-direction: row;
+    padding: 10px;
+    justify-content: space-between;
+  }
+  form div {
+    flex-direction: column;
+    justify-content: center;
+  }
+  form label {
+    margin-right: 20px;
+  }
+  form select,
+  form input {
+  margin-bottom: 10px;
+  }
+  form button {
+    width: 15%;
+  }
+  .group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .ideas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .subGroup {
+    width: 50%;
+    position: relative;
+  }
+}
